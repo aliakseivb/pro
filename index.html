@@ -11,18 +11,14 @@
     <div class="company">Valantis</div>
     <div class="products__header">
       <div class="products__apply_filter">
-        <div class="apply_item applied">
+        <div class="apply_item all">
           <span>Все</span>
-          <div class="cross">
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
         </div>
       </div>
       <div class="select-wrap">
         <div class="sorting__filter">
-          <div class="sorting__filter_head open">
-            <span>Сортировать по</span>
+          <div class="sorting__filter_head">
+            <span>Выбрать сортировку</span>
             <svg width="15.000000" height="8.000000" viewBox="0 0 15.000000 8.0000000" fill="none">
               <path id="Vector"
                     d="M7.2229 7.16455C6.63959 7.16455 6.05627 6.93958 5.61456 6.49792L0.181274 1.06458C-0.0604248 0.822876 -0.0604248 0.422974 0.181274 0.181274C0.422913 -0.0604248 0.822937 -0.0604248 1.06458 0.181274L6.49792 5.61462C6.89789 6.01453 7.54791 6.01453 7.94794 5.61462L13.3812 0.181274C13.6229 -0.0604248 14.0229 -0.0604248 14.2646 0.181274C14.5062 0.422974 14.5062 0.822876 14.2646 1.06458L8.83124 6.49792C8.38959 6.93958 7.80627 7.16455 7.2229 7.16455Z"
@@ -30,8 +26,8 @@
             </svg>
           </div>
           <div class="sorting__filter_body">
-            <div class="sorting__filter_body_item">
-              <span>Каталог</span>
+            <div data-info="Название товара ..." data-name="name" class="sorting__filter_body_item">
+              <span>По названию</span>
               <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"
@@ -44,8 +40,8 @@
                       fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>
               </svg>
             </div>
-            <div class="sorting__filter_body_item selected">
-              <span>Каталог</span>
+            <div data-info="Укажите цену ..." data-name="price" class="sorting__filter_body_item">
+              <span>По цене</span>
               <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"
@@ -58,8 +54,8 @@
                       fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>
               </svg>
             </div>
-            <div class="sorting__filter_body_item">
-              <span>Каталог</span>
+            <div data-info="Укажите брэнд ..." data-name="brand" class="sorting__filter_body_item">
+              <span>По бренду</span>
               <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"
@@ -71,6 +67,14 @@
                       d="M10.4355 5.80664L5.97656 5.80664L5.97656 10.1777L4.46484 10.1777L4.46484 5.80664L0 5.80664L0 4.39453L4.46484 4.39453L4.46484 0L5.97656 0L5.97656 4.39453L10.4355 4.39453L10.4355 5.80664Z"
                       fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>
               </svg>
+            </div>
+
+            <div class="sorting__form">
+              <div class="form__input">
+                <input data-name="" type="text" class="input search" placeholder="">
+                <button type="button" class="button search__button">Найти</button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -481,7 +485,7 @@
     <div class="pagination">
       <span class="action backward">
         <svg width="50px" height="50px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="rotate(-90)">
+             fill="#000000" transform="rotate(-90)">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
              stroke-width="0.52"></g>
@@ -497,7 +501,7 @@
       </span>
       <span class="action forward">
         <svg width="50px" height="50px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="rotate(90)">
+             fill="#000000" transform="rotate(90)">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
              stroke-width="0.52"></g>
@@ -515,11 +519,13 @@
   </div>
 </section>
 
+<div class="loader">
+  <div class="loader_body"></div>
+</div>
 
-<!--<script src="md5.min.js"></script>-->
-<script src="./components/sorting.js"></script>
-
-<!--<script type="module" src="app.js">-->
+<script src="md5.min.js"></script>
+<!--<script src="./components/sorting.js"></script>-->
+<script type="module" src="app.js">
 
 </script>
 </body>
