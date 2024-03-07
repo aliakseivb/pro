@@ -3,8 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
+<section class="products">
+  <div class="container">
+    <div class="company">Valantis <br>
+      <div style="font-size: 20px; color: #071739">непонятен смысл сортировки с offset при указании любого из field
+        (если только не для какой-то перекрестной сортировки)
+        <br>фильтры сделать не тяжело, по смыслу похоже на то, что сделано, но надоели ответы с ошибкой 500
+      </div>
+    </div>
 
+    <div class="products__header" id="products">
+      <div class="products__apply_filter">
+        <div class="apply_item all selected">
+          <span>Все</span>
+        </div>
+      </div>
+      <div class="select-wrap">
+        <div class="sorting__filter">
+          <div class="sorting__filter_head">
+            <span>Сортировать по</span>
+            <svg width="15.000000" height="8.000000" viewBox="0 0 15.000000 8.0000000" fill="none">
+              <path id="Vector"
+                    d="M7.2229 7.16455C6.63959 7.16455 6.05627 6.93958 5.61456 6.49792L0.181274 1.06458C-0.0604248 0.822876 -0.0604248 0.422974 0.181274 0.181274C0.422913 -0.0604248 0.822937 -0.0604248 1.06458 0.181274L6.49792 5.61462C6.89789 6.01453 7.54791 6.01453 7.94794 5.61462L13.3812 0.181274C13.6229 -0.0604248 14.0229 -0.0604248 14.2646 0.181274C14.5062 0.422974 14.5062 0.822876 14.2646 1.06458L8.83124 6.49792C8.38959 6.93958 7.80627 7.16455 7.2229 7.16455Z"
+                    fill="#071739" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </svg>
+          </div>
+          <div class="sorting__filter_body">
+            <!--            <div class="sorting__selects"></div>-->
+            <!--            <div data-info="Название товара ..." data-name="product" class="sorting__filter_body_item">-->
+            <!--              <span>По названию</span>-->
+            <!--              <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"-->
+            <!--                      fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--              <svg class="plus" width="10.00000" height="10.000000" viewBox="0 0 10 10" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+"-->
+            <!--                      d="M10.4355 5.80664L5.97656 5.80664L5.97656 10.1777L4.46484 10.1777L4.46484 5.80664L0 5.80664L0 4.39453L4.46484 4.39453L4.46484 0L5.97656 0L5.97656 4.39453L10.4355 4.39453L10.4355 5.80664Z"-->
+            <!--                      fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--            </div>-->
+            <!--            <div data-info="Укажите цену ..." data-name="price" class="sorting__filter_body_item">-->
+            <!--              <span>По цене</span>-->
+            <!--              <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"-->
+            <!--                      fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--              <svg class="plus" width="10.00000" height="10.000000" viewBox="0 0 10 10" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+"-->
+            <!--                      d="M10.4355 5.80664L5.97656 5.80664L5.97656 10.1777L4.46484 10.1777L4.46484 5.80664L0 5.80664L0 4.39453L4.46484 4.39453L4.46484 0L5.97656 0L5.97656 4.39453L10.4355 4.39453L10.4355 5.80664Z"-->
+            <!--                      fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--            </div>-->
+            <!--            <div data-info="Укажите брэнд ..." data-name="brand" class="sorting__filter_body_item">-->
+            <!--              <span>По бренду</span>-->
+            <!--              <svg class="minus" width="10.00000" height="2.000000" viewBox="0 0 6.28711 2.000000" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+" d="M0 0L6.28711 0L6.28711 1.48828L0 1.48828L0 0Z" fill="#071739" fill-opacity="1.000000"-->
+            <!--                      fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--              <svg class="plus" width="10.00000" height="10.000000" viewBox="0 0 10 10" fill="none"-->
+            <!--                   xmlns="http://www.w3.org/2000/svg">-->
+            <!--                <path id="+"-->
+            <!--                      d="M10.4355 5.80664L5.97656 5.80664L5.97656 10.1777L4.46484 10.1777L4.46484 5.80664L0 5.80664L0 4.39453L4.46484 4.39453L4.46484 0L5.97656 0L5.97656 4.39453L10.4355 4.39453L10.4355 5.80664Z"-->
+            <!--                      fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>-->
+            <!--              </svg>-->
+            <!--            </div>-->
+
+            <div class="sorting__form">
+              <div class="form__input">
+                <input data-name="" type="text" class="input search" placeholder="">
+                <button type="button" class="button search__button">Найти</button>
+              </div>
+              <!--              <div class="form__input_extra">-->
+              <!--                Опционально:-->
+              <!--                <div class="extra__desc">-->
+              <!--                  <p class="extra__text">с какой позиции искать</p>-->
+              <!--                  <input type="number" class="input offset" placeholder="0">-->
+              <!--                </div>-->
+              <!--                <div class="extra__desc">-->
+              <!--                  <p class="extra__text">сколько товаров показать</p>-->
+              <!--                  <input type="number" class="input limit" placeholder="0">-->
+              <!--                </div>-->
+              <!--              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="products__list">
+        <div class="products__items prev"></div>
+        <div class="products__items active"></div>
+        <div class="products__items next"></div>
+      </div>
+    </div>
+    <div class="pagination">
+      <div href="#products" class="move_btn backward not-move">
+        <svg width="50px" height="50px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             fill="#000000" transform="rotate(-90)">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+             stroke-width="0.52"></g>
+          <g id="SVGRepo_iconCarrier"><title>arrow_up [#337]</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g
+                  id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path
+                      d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                      id="arrow_up-[#337]">
+                  </path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div href="./index.html#products" class="move_btn forward">
+        <svg width="50px" height="50px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             fill="#000000" transform="rotate(90)">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+             stroke-width="0.52"></g>
+          <g id="SVGRepo_iconCarrier"><title>arrow_up [#337]</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g
+                  id="Dribbble-Light-Preview" transform="translate(-260.000000, -6684.000000)" fill="#000000">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path
+                      d="M223.707692,6534.63378 L223.707692,6534.63378 C224.097436,6534.22888 224.097436,6533.57338 223.707692,6533.16951 L215.444127,6524.60657 C214.66364,6523.79781 213.397472,6523.79781 212.616986,6524.60657 L204.29246,6533.23165 C203.906714,6533.6324 203.901717,6534.27962 204.282467,6534.68555 C204.671211,6535.10081 205.31179,6535.10495 205.70653,6534.69695 L213.323521,6526.80297 C213.714264,6526.39807 214.346848,6526.39807 214.737591,6526.80297 L222.294621,6534.63378 C222.684365,6535.03868 223.317949,6535.03868 223.707692,6534.63378"
+                      id="arrow_up-[#337]">
+                  </path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="loader">
+  <div class="loader_body"></div>
+</div>
+
+<script src="md5.min.js"></script>
+<script type="module" src="./script.js">
+
+</script>
 </body>
 </html>
