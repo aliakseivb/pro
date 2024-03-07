@@ -2,33 +2,36 @@ import config from "../config/config.js";
 
 export class HttpService {
 
-  constructor() {
-  }
-
-  static async request(url, body = null){
+  static async request(data = null){
+    const md = config.md;
     const params = {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
         'Accept': 'application/json',
-        'X-Auth': `${config.md}`
+        'X-Auth': md
       },
     };
-    if(body){
-      params.body = JSON.stringify({action: body});
+    if(data){
+      if (data.params){
+        params.body = JSON.stringify({action: data.action, params: data.params});
+      } else {
+        params.body = JSON.stringify({action: data.action});
+      }
     }
-    const response = await fetch(url, params);
+    const response = await fetch(config.host, params);
+    // const newResp = await (await fetch(config.host, params)).json();
+    // console.log(newResp)
     if (response.status < 200 || response.status >= 300) {
       if(response.status === 401){
         alert("Авторизуйтесь, пожалуйста");
         throw new Error(response.message);
       }
       if(response.status === 400){
-        alert("Ошибка переданных параметров, проверьте...");
+        console.log("Ошибка переданных параметров, проверьте...");
         throw new Error(response.message);
       }
     }
     return await response.json();
   }
-
 }
