@@ -2,7 +2,7 @@ import config from "../config/config.js";
 
 export class HttpService {
 
-  static async request(data = null){
+  static async request(data){
     const md = config.md;
     const params = {
       method: 'POST',
@@ -20,8 +20,6 @@ export class HttpService {
       }
     }
     const response = await fetch(config.host, params);
-    // const newResp = await (await fetch(config.host, params)).json();
-    // console.log(newResp)
     if (response.status < 200 || response.status >= 300) {
       if(response.status === 401){
         alert("Авторизуйтесь, пожалуйста");
