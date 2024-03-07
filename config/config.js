@@ -2,7 +2,7 @@ const md = md5(`Valantis_${new Date().toLocaleDateString().split('.').reverse().
 
 export default {
   host: 'https://api.valantis.store:41000/',
-  md: '6b6cb1e55175afd4a78c2831ba83c4b9',
+  md: md,
   sorting: [
     {brand: 'Отсортировано по бренду'},
     {price: 'Отсортировано по цене'},
